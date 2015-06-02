@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Arreglos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numero</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @arreglos.each do |arreglo| %>
+      <tr>
+        <td><%= arreglo.numero %></td>
+        <td><%= link_to 'Show', arreglo %></td>
+        <td><%= link_to 'Edit', edit_arreglo_path(arreglo) %></td>
+        <td><%= link_to 'Destroy', arreglo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Arreglo', new_arreglo_path %>
